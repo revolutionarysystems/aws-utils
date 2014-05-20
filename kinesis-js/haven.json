@@ -1,0 +1,26 @@
+{
+	"name": "kinesis-js",
+	"version": "0.1.0",
+	"artifacts":[
+		{
+			"files": [
+				{"src/kinesis.js": "kinesis.js"}
+			]
+		}
+	],
+	"dependencies":[
+		{
+			"name": "utils-ajax",
+			"version": "0.1.0"
+		},
+        {
+			"name": "cryptojs",
+			"version": "3.1.2",
+			"includes": [
+				"core-min.js",
+				"sha256-min.js",
+				"hmac-sha256.js"
+			]
+		}
+	]
+}
