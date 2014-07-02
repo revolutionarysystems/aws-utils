@@ -4,7 +4,7 @@ var Kinesis = function(config) {
 
 	this.put = function(data, options) {
 		var encodedData = btoa(data)
-        var partitionKey = typeof data.partitionKey !== 'undefined' ? data.partitionKey : this.config.partitionKey;
+        var partitionKey = typeof options.partitionKey !== 'undefined' ? options.partitionKey : this.config.partitionKey;
 		var payload = '{"PartitionKey": "' + partitionKey + '", "StreamName": "' + this.config.streamName + '", "Data": "' + encodedData + '"}';
 		var now = new Date();
 		var datestamp = getDatestamp(now);
