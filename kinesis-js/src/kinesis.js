@@ -15,8 +15,7 @@ var Kinesis = function(config) {
 				"Authorization": "AWS4-HMAC-SHA256 Credential=" + this.config.credentials.accessKey + "/" + datestamp + "/us-east-1/kinesis/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=" + signature,
 				"X-Amz-Date": timestamp,
 				"X-Amz-Target": "Kinesis_20131202.PutRecord",
-				"Content-Type": "application/x-amz-json-1.1",
-				"Host": "kinesis.us-east-1.amazonaws.com"
+				"Content-Type": "application/x-amz-json-1.1"
 			},
 			onSuccess: options.onSuccess,
 			onError: options.onError
