@@ -15,7 +15,7 @@ var Kinesis = function(config) {
 				"Authorization": "AWS4-HMAC-SHA256 Credential=" + this.config.credentials.accessKey + "/" + datestamp + "/us-east-1/kinesis/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=" + signature,
 				"X-Amz-Date": timestamp,
 				"X-Amz-Target": "Kinesis_20131202.PutRecord",
-				"Content-Type": "application/x-amz-json-1.1"
+				"Content-Type": "application/x-amz-json-1.1; charset=UTF-8"
 			},
 			onSuccess: options.onSuccess,
 			onError: options.onError
@@ -24,7 +24,7 @@ var Kinesis = function(config) {
 
 	function getCanonicalString(timestamp, payload) {
 		var hashedPayload = CryptoJS.SHA256(payload);
-		var canonicalString = "POST\n\/\n\ncontent-type:application/x-amz-json-1.1\nhost:kinesis.us-east-1.amazonaws.com\nx-amz-date:" + timestamp + "\nx-amz-target:Kinesis_20131202.PutRecord\n\ncontent-type;host;x-amz-date;x-amz-target\n" + hashedPayload;
+		var canonicalString = "POST\n\/\n\ncontent-type:application/x-amz-json-1.1; charset=UTF-8\nhost:kinesis.us-east-1.amazonaws.com\nx-amz-date:" + timestamp + "\nx-amz-target:Kinesis_20131202.PutRecord\n\ncontent-type;host;x-amz-date;x-amz-target\n" + hashedPayload;
 		return canonicalString;
 	}
 
