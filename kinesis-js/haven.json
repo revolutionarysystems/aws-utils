@@ -1,6 +1,9 @@
 {
 	"name": "kinesis-js",
 	"version": "0.1.0-SNAPSHOT",
+    "file": {
+        "src": "."
+    },
 	"artifacts":[
 		{
 			"files": [
@@ -8,6 +11,13 @@
 			]
 		}
 	],
+    "repositories": {
+		"distribution": [
+			{
+				"url": "http://build.revsys.co.uk/haven-repository"
+			}
+		]
+	},
 	"dependencies":[
 		{
 			"name": "utils-ajax",
