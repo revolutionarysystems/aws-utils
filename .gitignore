@@ -1,3 +1,4 @@
 /kinesis-js/haven_artifacts
 /kinesis-js/node_modules
 /node_modules
+/kinesis-processor/target

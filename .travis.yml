@@ -1,8 +1,16 @@
-language: node_js
+language: java
+before_install: git clone http://github.com/revolutionarysystems/travis.git target/travis
+install: npm install
 script:
+- mvn deploy --settings target/travis/settings.xml
 - grunt ci
+env:
+  secure: AbHK7Pz4DdkfxouZyc5DsbYmUJ1GdNuiy5o1pwbV+bJTJme253/GY9I0Jqo6f9VQXsUeVrQdgYWZz2AK7vfku+TRas0eYOdThJ7XoXh4qRpOvceqOUbhvXmJrbIrrALpbb8jWCoTOd9u7jhTw4UJD+i62kw68MywLXwglM7Aug0=
 notifications:
   email:
-    - adam@revolutionarysystems.co.uk
-    - andrew@revolutionarysystems.co.uk
-    - ci@revolutionarysystems.co.uk
+  - adam@revolutionarysystems.co.uk
+  - andrew@revolutionarysystems.co.uk
+  - ci@revolutionarysystems.co.uk
+branches:
+  except:
+  - /^v[0-9]/
